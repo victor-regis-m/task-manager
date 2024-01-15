@@ -6,7 +6,10 @@ async function connect(){
         useUnifiedTopology: true
     }  
     const connectionString = configs.MongoDBConnString || "";
-    return await mongoose.connect(connectionString, options)
+    return await mongoose
+                    .connect(connectionString, options)
+                    .then(() => console.log("Connected to database sucessfully"))
+                    .catch((err) => console.log(err))
 }
 
-module.exports = connect();
+module.exports = connect;
