@@ -10,6 +10,11 @@ const TaskSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     }
+    // img:
+    // {
+    //     data: Buffer,
+    //     contentType: String
+    // }
 });
 
 module.exports = mongoose.model('Task', TaskSchema);
